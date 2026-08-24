@@ -1,140 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Almas Group of Companies | Restaurants</title>
-  <meta name="description" content="Almas Group of Companies — Restaurants in Riyadh, Saudi Arabia.">
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#faf8f3;color:#24201b;line-height:1.6}
-    header{position:sticky;top:0;z-index:20;background:rgba(250,248,243,.96);border-bottom:1px solid #e4ddcf;backdrop-filter:blur(8px)}
-    .nav{max-width:1150px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
-    .brand img{width:58px;height:58px;object-fit:contain}
-    nav a{color:#24201b;text-decoration:none;margin-left:22px;font-weight:600;font-size:14px}
-    nav a:hover{color:#9b6a20}
-    .hero{min-height:76vh;display:flex;align-items:center;background:linear-gradient(135deg,#f6efe2,#fffdf9)}
-    .hero-inner{max-width:1150px;margin:auto;padding:75px 22px;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center;width:100%}
-    .eyebrow{text-transform:uppercase;letter-spacing:3px;color:#9b6a20;font-size:13px;font-weight:800;margin-bottom:12px}
-    h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin-bottom:20px}
-    .hero p{font-size:19px;max-width:650px;color:#5b5146}
-    .btn{display:inline-block;margin-top:28px;padding:13px 22px;border-radius:999px;background:#24201b;color:#fff;text-decoration:none;font-weight:700}
-    .hero-logo{display:flex;justify-content:center}
-    .hero-logo img{width:min(330px,75vw);filter:drop-shadow(0 18px 30px rgba(0,0,0,.13))}
-    section{max-width:1150px;margin:auto;padding:78px 22px}
-    .section-title{text-align:center;margin-bottom:38px}
-    .section-title h2{font-size:38px;margin-bottom:8px}
-    .section-title p{color:#6e655a}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .card{background:#fff;border:1px solid #e7dfd2;border-radius:20px;padding:24px;box-shadow:0 8px 28px rgba(45,35,22,.06)}
-    .icon{font-size:30px;margin-bottom:14px}
-    .card h3{font-size:20px;margin-bottom:8px}
-    .card .loc{color:#9b6a20;font-weight:700;font-size:14px;margin-bottom:10px}
-    .card p{color:#6b6258;font-size:14px}
-    .about{background:#24201b;color:#fff;border-radius:28px;padding:55px}
-    .about p{color:#d7d0c5;max-width:800px}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-    .contact-box{background:#fff;border:1px solid #e7dfd2;border-radius:20px;padding:28px}
-    .contact-box h3{margin-bottom:10px}
-    footer{background:#171411;color:#ddd;padding:35px 22px;text-align:center}
-    footer img{width:62px;margin-bottom:10px}
-    footer p{font-size:13px;color:#aaa}
-    @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr}.hero-logo{order:-1}.hero-logo img{width:210px}}
-    @media(max-width:600px){nav{display:none}.cards,.contact{grid-template-columns:1fr}.about{padding:30px}.hero{min-height:auto}.hero-inner{padding:60px 22px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Mas Group | Taste of Good Food</title>
+<meta name="description" content="Al Mas Group of Companies — restaurants, catering and food businesses in Saudi Arabia.">
+<style>
+:root{--red:#7f1018;--red2:#a91e26;--gold:#d7a641;--cream:#fbf6ee;--ink:#201714;--muted:#6e625a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.97);border-bottom:1px solid #eadfce}
+.nav{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.5px}
+.brand img{width:58px;height:58px;object-fit:contain}
+nav a{margin-left:20px;text-decoration:none;color:var(--ink);font-weight:700;font-size:14px}
+nav a:hover{color:var(--red)}
+.hero{background:linear-gradient(135deg,#fffaf3 0%,#f5e7d4 100%);min-height:78vh;display:flex;align-items:center}
+.hero-inner{max-width:1180px;margin:auto;width:100%;padding:75px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:4px;color:var(--gold);font-weight:900;font-size:13px}
+h1{font-size:clamp(45px,7vw,82px);line-height:1.0;margin:14px 0 20px}
+.hero p{font-size:19px;color:#5d5048;max-width:650px}
+.btn{display:inline-block;margin-top:28px;background:var(--red);color:white;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:800}
+.hero-art{background:#fff;border-radius:28px;padding:18px;box-shadow:0 25px 60px rgba(70,20,15,.15)}
+.hero-art img{width:100%;display:block;border-radius:18px}
+section{max-width:1180px;margin:auto;padding:80px 20px}
+.title{text-align:center;margin-bottom:42px}
+.title h2{font-size:42px;line-height:1.1;margin-bottom:8px}
+.title p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid #eadfce;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(50,25,10,.06)}
+.card-img{height:190px;background:#eee;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:22px}
+.card h3{font-size:21px;margin-bottom:5px}
+.location{color:var(--red);font-weight:800;font-size:14px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:14px}
+.badge{display:inline-block;margin-top:14px;padding:7px 10px;border-radius:999px;background:#f8ecd2;color:#795817;font-size:12px;font-weight:800}
+.about{background:var(--red);color:#fff;border-radius:30px;padding:55px}
+.about .kicker{color:#f0cf7b}
+.about h2{font-size:40px;margin:8px 0 15px}
+.about p{color:#f1ded7;max-width:900px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.panel{background:#fff;border:1px solid #eadfce;border-radius:22px;padding:30px}
+.panel h3{font-size:24px;margin-bottom:10px;color:var(--red)}
+.panel p{color:var(--muted)}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.value{background:#fff;padding:24px;border-radius:18px;border:1px solid #eadfce}
+.value strong{display:block;color:var(--red);margin-bottom:8px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery img{width:100%;height:190px;object-fit:cover;border-radius:16px}
+.contact{background:#211715;color:#fff;border-radius:28px;padding:45px}
+.contact h2{font-size:38px;margin-bottom:12px}
+.contact p{color:#d9cbc5}
+footer{background:#140f0d;color:#ddd;text-align:center;padding:35px 20px}
+footer img{width:65px;margin-bottom:8px}
+footer small{color:#a99e98}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.values{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){nav{display:none}.cards,.grid2,.values,.gallery{grid-template-columns:1fr}.hero-inner{padding:55px 20px}.about,.contact{padding:30px}.title h2{font-size:34px}}
+</style>
 </head>
 <body>
 <header>
-  <div class="nav">
-    <div class="brand">
-      <img src="logo.png" alt="Almas Group of Companies logo">
-      <span>ALMAS GROUP</span>
-    </div>
-    <nav>
-      <a href="#restaurants">Restaurants</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+<div class="nav">
+  <div class="brand"><img src="assets/logo.png" alt="Al Mas Group logo"><span>AL MAS GROUP</span></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#businesses">Our Businesses</a>
+    <a href="#values">Values</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="eyebrow">Almas Group of Companies</div>
-        <h1>Good Food.<br>Great Places.</h1>
-        <p>Welcome to Almas Group of Companies — bringing memorable dining experiences to Riyadh through our family of restaurants.</p>
-        <a class="btn" href="#restaurants">Explore Our Restaurants</a>
-      </div>
-      <div class="hero-logo"><img src="logo.png" alt="Almas Group logo"></div>
-    </div>
-  </section>
+<section class="hero">
+<div class="hero-inner">
+  <div>
+    <div class="kicker">Al Mas Group of Companies</div>
+    <h1>Taste of<br>Good Food.</h1>
+    <p>Restaurant and food-service businesses serving guests in Saudi Arabia, with a heritage in the Food & Beverage industry dating back to 1997.</p>
+    <a class="btn" href="#businesses">Explore Our Businesses</a>
+  </div>
+  <div class="hero-art"><img src="assets/profile-cover.jpg" alt="Al Mas Group company profile"></div>
+</div>
+</section>
 
-  <section id="restaurants">
-    <div class="section-title">
-      <h2>Our Restaurants</h2>
-      <p>Visit us at our locations across Riyadh.</p>
-    </div>
-    <div class="cards">
-      <article class="card">
-        <div class="icon">🍽️</div>
-        <h3>Al Mas Restaurant</h3>
-        <div class="loc">Al Malaz, Riyadh</div>
-        <p>A welcoming dining destination in the heart of Al Malaz.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🍽️</div>
-        <h3>Almas Restaurant</h3>
-        <div class="loc">Batha, Riyadh</div>
-        <p>Enjoy a delicious meal at our Batha location.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🔥</div>
-        <h3>Tikka Restaurant</h3>
-        <div class="loc">Jarir Street, Riyadh</div>
-        <p>Great flavours and satisfying meals on Jarir Street.</p>
-      </article>
-      <article class="card">
-        <div class="icon">⭐</div>
-        <h3>Grand Almas</h3>
-        <div class="loc">Sulaimaniya, Riyadh</div>
-        <p>A premium Almas dining experience in Sulaimaniya.</p>
-      </article>
-    </div>
-  </section>
+<section id="about">
+<div class="about">
+  <div class="kicker">About Us</div>
+  <h2>Al Mas Group</h2>
+  <p>According to the company profile, Al Mas Group has been established since 1997 and is engaged in the Food and Beverage business. The group describes its focus as combining people, passion, quality service and memorable dining experiences, with continuous improvement and sustainable growth.</p>
+</div>
+</section>
 
-  <section id="about">
-    <div class="about">
-      <div class="eyebrow">About Us</div>
-      <h2>Almas Group of Companies</h2>
-      <p>We are a restaurant group serving guests across Riyadh. Our goal is to provide quality food, warm hospitality and a comfortable dining experience at every Almas location.</p>
-    </div>
-  </section>
+<section id="businesses">
+<div class="title">
+  <h2>Our Businesses</h2>
+  <p>Our current website portfolio includes the businesses and locations provided by the company.</p>
+</div>
+<div class="cards">
+  <article class="card"><div class="card-img"><img src="assets/almas-malaz.jpg" alt="Al Mas Restaurant"></div><div class="card-body"><h3>Al Mas Restaurant</h3><div class="location">Al Malaz, Riyadh</div><p>Indian restaurant and dining destination. The company profile highlights family dining, private cabins, banquet facilities, takeaway and delivery.</p><span class="badge">Restaurant</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/indo-arab.jpg" alt="Almas Indo-Arab Fusion Restaurant"></div><div class="card-body"><h3>Almas Restaurant</h3><div class="location">Batha, Riyadh</div><p>Indo-Arab fusion restaurant. The profile highlights family areas, takeaway, food service and outdoor catering.</p><span class="badge">Restaurant</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/tikka.jpg" alt="Tikka Restaurant"></div><div class="card-body"><h3>Tikka Restaurant</h3><div class="location">Jarir Street, Riyadh</div><p>Quick-service restaurant offering combo meals and Arabian wraps, with takeaway and delivery services.</p><span class="badge">Restaurant</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/welcome.jpg" alt="Grand Almas"></div><div class="card-body"><h3>Grand Almas</h3><div class="location">Sulaimaniya, Riyadh</div><p>A current Al Mas Group branch added to the website portfolio.</p><span class="badge">Restaurant</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/profile-end.jpg" alt="Crispy Pollo"></div><div class="card-body"><h3>Crispy Pollo</h3><div class="location">Azeiziya, Riyadh</div><p>A current Al Mas Group business added to the website portfolio.</p><span class="badge">Restaurant</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/welcome.jpg" alt="Almas Mini Mart and Coffee Shop"></div><div class="card-body"><h3>Almas Mini Mart &amp; Coffee Shop</h3><div class="location">Location to be updated</div><p>Mini mart and coffee shop business. Branch location and additional details can be added when confirmed.</p><span class="badge">Mini Mart &amp; Coffee</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/profile-cover.jpg" alt="Grill and Rice"></div><div class="card-body"><h3>Grill &amp; Rice</h3><div class="location">Jeddah</div><p>A current Al Mas Group business added to the website portfolio.</p><span class="badge">Restaurant</span></div></article>
+</div>
+</section>
 
-  <section id="contact">
-    <div class="section-title">
-      <h2>Contact & Locations</h2>
-      <p>More contact details can be added here.</p>
-    </div>
-    <div class="contact">
-      <div class="contact-box">
-        <h3>📍 Riyadh, Saudi Arabia</h3>
-        <p>Al Malaz · Batha · Jarir Street · Sulaimaniya</p>
-      </div>
-      <div class="contact-box">
-        <h3>📞 Get in Touch</h3>
-        <p>Add your official phone number, WhatsApp and email here.</p>
-      </div>
-    </div>
-  </section>
+<section>
+<div class="grid2">
+  <div class="panel"><h3>Mission</h3><p>To distinguish the group as a leader in the restaurants, catering and food trading industry in Riyadh and across Saudi Arabia, with the ambition to become a progressive leading food industry.</p></div>
+  <div class="panel"><h3>Vision</h3><p>To provide excellent services that surpass client expectations, with innovation and creativity across food and beverage, emphasizing distinctive, delicious culinary selections and outstanding services.</p></div>
+</div>
+</section>
+
+<section id="values">
+<div class="title"><h2>Al Mas Core Values</h2><p>Principles highlighted in the company profile.</p></div>
+<div class="values">
+  <div class="value"><strong>Integrity</strong>Treat others with positive intentions, humility, dignity and transparency.</div>
+  <div class="value"><strong>Quality</strong>Strive toward the best principles, practices, processes and products.</div>
+  <div class="value"><strong>Responsibility</strong>Take personal responsibility and accountability for tasks, associates and company resources.</div>
+  <div class="value"><strong>Teamwork</strong>Work together as a team and value each other's contributions.</div>
+  <div class="value"><strong>Communication</strong>Use open communication to achieve exceptional results.</div>
+  <div class="value"><strong>Community</strong>Give back to the community with sincerity.</div>
+</div>
+</section>
+
+<section>
+<div class="title"><h2>From Our Company Profile</h2><p>A selection of visuals from the official profile supplied for this website.</p></div>
+<div class="gallery">
+  <img src="assets/almas-malaz.jpg" alt="Al Mas Restaurant profile">
+  <img src="assets/almas-indian.jpg" alt="Al Mas Indian Restaurant profile">
+  <img src="assets/indo-arab.jpg" alt="Al Mas Indo-Arab restaurant profile">
+  <img src="assets/tikka.jpg" alt="Tikka Restaurant profile">
+</div>
+</section>
+
+<section id="contact">
+<div class="contact">
+  <div class="kicker">Contact</div>
+  <h2>Al Mas Group of Companies</h2>
+  <p>Al Malaz, Riyadh, Kingdom of Saudi Arabia</p>
+  <p style="margin-top:8px">Company profile website: almasgroupksa.com</p>
+  <p style="margin-top:18px">Phone numbers, WhatsApp links, exact branch map links and opening hours can be added once the official details are provided.</p>
+</div>
+</section>
 </main>
 
 <footer>
-  <img src="logo.png" alt="Almas Group logo">
-  <p>© 2026 Almas Group of Companies. All rights reserved.</p>
+<img src="assets/logo.png" alt="Al Mas Group logo">
+<p>Al Mas Group of Companies</p>
+<small>© 2026 Al Mas Group. All rights reserved.</small>
 </footer>
 </body>
 </html>
