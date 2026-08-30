@@ -506,7 +506,8 @@ section {
   letter-spacing: 0.5px;
 }
 
-.grid3 {
+/* 5 Cards Booking Grid */
+.booking-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
@@ -516,7 +517,7 @@ section {
   background: var(--cream-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 34px 28px;
+  padding: 32px 26px;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
   position: relative;
@@ -533,9 +534,11 @@ section {
 .booking-card.gold-top { border-top: 6px solid var(--gold); }
 .booking-card.red-top { border-top: 6px solid var(--primary); }
 .booking-card.amber-top { border-top: 6px solid #e05e14; }
+.booking-card.maroon-top { border-top: 6px solid #8e151e; }
+.booking-card.teal-top { border-top: 6px solid #2b7a78; }
 
 .booking-card h3 {
-  font-size: 24px;
+  font-size: 22px;
   margin: 8px 0 6px;
   color: var(--primary-dark);
 }
@@ -543,18 +546,19 @@ section {
 .booking-location {
   color: var(--primary);
   font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 16px;
+  font-size: 13.5px;
+  margin-bottom: 14px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
+  line-height: 1.4;
 }
 
 .booking-type {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--ink-soft);
-  margin-bottom: 18px;
-  padding: 10px 14px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
   background: var(--cream);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--gold);
@@ -564,7 +568,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .phone-item {
@@ -597,6 +601,8 @@ section {
 .btn-book.red { background: var(--primary); }
 .btn-book.gold { background: var(--gold-dark); }
 .btn-book.amber { background: #e05e14; }
+.btn-book.maroon { background: #8e151e; }
+.btn-book.teal { background: #2b7a78; }
 
 .btn-book:hover {
   filter: brightness(1.15);
@@ -665,8 +671,9 @@ section {
   font-size: 14px;
   margin-bottom: 12px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
+  line-height: 1.4;
 }
 
 .card p {
@@ -1210,7 +1217,7 @@ footer {
   .hero p { margin: auto; }
   .hero-actions { justify-content: center; }
   .hero-art-wrapper { max-width: 580px; margin: auto; }
-  .cards, .grid3 { grid-template-columns: repeat(2, 1fr); }
+  .cards, .booking-grid { grid-template-columns: repeat(2, 1fr); }
   .values { grid-template-columns: repeat(2, 1fr); }
   .profile-showcase { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1235,7 +1242,7 @@ footer {
     gap: 16px;
   }
   .mobile-menu-btn { display: block; }
-  .cards, .grid2, .grid3, .values, .profile-showcase { grid-template-columns: 1fr; }
+  .cards, .grid2, .booking-grid, .values, .profile-showcase { grid-template-columns: 1fr; }
   .about-features { grid-template-columns: 1fr; }
   .gallery-banner-card { flex-direction: column; text-align: center; padding: 35px 24px; }
   .gallery-banner-actions { flex-direction: column; gap: 20px; }
@@ -1353,14 +1360,16 @@ footer {
     </div>
   </section>
 
+  <!-- 5 Direct Branch Booking & Order Cards -->
   <section id="reservations">
     <div class="title">
-      <div class="kicker" style="justify-content: center;">Direct Contact</div>
+      <div class="kicker" style="justify-content: center;">Direct Contact & Orders</div>
       <h2>Table Reservations &amp; Orders</h2>
-      <p>Book your table for family dining or order fresh takeaway from our premier branches in Riyadh.</p>
+      <p>Book your table for family dining or order fresh takeaway directly from our branches across Riyadh.</p>
     </div>
 
-    <div class="grid3">
+    <div class="booking-grid">
+      <!-- 1. Grand Al Mas -->
       <div class="booking-card red-top">
         <div>
           <div class="kicker">Multicuisine Dining</div>
@@ -1376,6 +1385,7 @@ footer {
         <a class="btn-book red" href="tel:+966536802686">Call for Reservation</a>
       </div>
 
+      <!-- 2. Al Mas Malaz -->
       <div class="booking-card gold-top">
         <div>
           <div class="kicker">Authentic Indian</div>
@@ -1393,6 +1403,7 @@ footer {
         <a class="btn-book gold" href="tel:+966537765212">Call for Reservation</a>
       </div>
 
+      <!-- 3. Crispy Pollo -->
       <div class="booking-card amber-top">
         <div>
           <div class="kicker" style="color:#e05e14">Crispy Chicken &amp; Fast Food</div>
@@ -1407,9 +1418,43 @@ footer {
         </div>
         <a class="btn-book amber" href="tel:+966557914392">Call for Orders</a>
       </div>
+
+      <!-- 4. Almas Batha -->
+      <div class="booking-card maroon-top">
+        <div>
+          <div class="kicker">Indo-Arab &amp; Chinese</div>
+          <h3>Almas Restaurant (Batha)</h3>
+          <div class="booking-location">📍 Near Makkah Super Market, Philippine Market, Batha, Riyadh</div>
+          <div class="booking-type">
+            🍲 <strong>Arabic, Indian &amp; Chinese Cuisine</strong>
+          </div>
+          <div class="phone-list">
+            <a class="phone-item" href="tel:+966537730461">📞 053 773 0461</a>
+            <a class="phone-item" href="tel:+966501019707">📞 050 101 9707</a>
+          </div>
+        </div>
+        <a class="btn-book maroon" href="tel:+966537730461">Call for Reservation</a>
+      </div>
+
+      <!-- 5. Tikka Restaurant -->
+      <div class="booking-card teal-top">
+        <div>
+          <div class="kicker" style="color:#2b7a78">Grills &amp; Arabian Wraps</div>
+          <h3>Tikka Restaurant</h3>
+          <div class="booking-location">📍 Jarir Street, Al Malaz, Riyadh</div>
+          <div class="booking-type">
+            🌯 <strong>Grilled Specials, Combos &amp; Takeaway</strong>
+          </div>
+          <div class="phone-list">
+            <a class="phone-item" href="tel:+966551400282">📞 055 140 0282</a>
+          </div>
+        </div>
+        <a class="btn-book teal" href="tel:+966551400282">Call for Orders</a>
+      </div>
     </div>
   </section>
 
+  <!-- Portfolio Section -->
   <section id="businesses">
     <div class="title">
       <div class="kicker" style="justify-content: center;">Portfolio</div>
@@ -1418,6 +1463,7 @@ footer {
     </div>
 
     <div class="cards">
+      <!-- 1. Al Mas Malaz -->
       <article class="card">
         <div class="card-img">
           <img src="assets/almas-malaz.jpg" alt="Al Mas Restaurant Malaz" loading="lazy">
@@ -1432,6 +1478,7 @@ footer {
         </div>
       </article>
 
+      <!-- 2. Indo-Arab Fusion Batha -->
       <article class="card">
         <div class="card-img">
           <img src="assets/indo-arab.jpg" alt="Almas Indo-Arab Fusion Restaurant" loading="lazy">
@@ -1439,13 +1486,15 @@ footer {
         <div class="card-body">
           <div>
             <h3>Almas Restaurant</h3>
-            <div class="location">📍 Batha, Riyadh</div>
-            <p>Renowned Indo-Arab fusion dining. Offering spacious family dining, takeaway, swift food service, and professional outdoor catering.</p>
+            <div class="location">📍 Near Makkah Super Market, Philippine Market, Batha, Riyadh</div>
+            <p>Renowned Indo-Arab &amp; Chinese dining. Offering spacious family dining, takeaway, swift food service, and professional catering.</p>
+            <p style="margin-top:8px;font-weight:700;color:var(--primary)">📞 053 773 0461 / 050 101 9707</p>
           </div>
-          <span class="badge">Fusion Cuisine</span>
+          <span class="badge">Indo-Arab &amp; Chinese</span>
         </div>
       </article>
 
+      <!-- 3. Tikka Restaurant -->
       <article class="card">
         <div class="card-img">
           <img src="assets/tikka.jpg" alt="Tikka Restaurant" loading="lazy">
@@ -1453,13 +1502,15 @@ footer {
         <div class="card-body">
           <div>
             <h3>Tikka Restaurant</h3>
-            <div class="location">📍 Jarir Street, Riyadh</div>
+            <div class="location">📍 Jarir Street, Al Malaz, Riyadh</div>
             <p>Popular quick-service restaurant known for delectable combo meals, grilled specialties, Arabian wraps, and prompt delivery services.</p>
+            <p style="margin-top:8px;font-weight:700;color:var(--primary)">📞 055 140 0282</p>
           </div>
           <span class="badge">Grills &amp; QSR</span>
         </div>
       </article>
 
+      <!-- 4. Grand Al Mas -->
       <article class="card">
         <div class="card-img">
           <img src="assets/welcome.jpg" alt="Grand Al Mas Multicuisine" loading="lazy">
@@ -1474,6 +1525,7 @@ footer {
         </div>
       </article>
 
+      <!-- 5. Crispy Pollo -->
       <article class="card">
         <div class="card-img">
           <img src="assets/crispy-pollo-logo.png" alt="Crispy Pollo By Almazzz" loading="lazy">
@@ -1489,6 +1541,7 @@ footer {
         </div>
       </article>
 
+      <!-- 6. Mini Mart & Coffee Shop -->
       <article class="card">
         <div class="card-img">
           <img src="assets/almas-minimart-banner.jpg" alt="Al Mas Mini Mart & Coffee Shop" loading="lazy">
@@ -1504,6 +1557,7 @@ footer {
         </div>
       </article>
 
+      <!-- 7. Grill & Rice Jeddah -->
       <article class="card">
         <div class="card-img">
           <img src="assets/profile-cover.jpg" alt="Grill and Rice Jeddah" loading="lazy">
@@ -1520,6 +1574,7 @@ footer {
     </div>
   </section>
 
+  <!-- Gallery Section -->
   <section id="gallery">
     <div class="gallery-banner-card">
       <div class="gallery-banner-info">
@@ -1544,6 +1599,7 @@ footer {
     </div>
   </section>
 
+  <!-- Mission & Vision -->
   <section>
     <div class="grid2">
       <div class="panel panel-accent-red">
@@ -1560,6 +1616,7 @@ footer {
     </div>
   </section>
 
+  <!-- Core Values -->
   <section id="values">
     <div class="title">
       <div class="kicker" style="justify-content: center;">Guiding Principles</div>
@@ -1601,6 +1658,7 @@ footer {
     </div>
   </section>
 
+  <!-- Archive Showcase -->
   <section>
     <div class="title">
       <div class="kicker" style="justify-content: center;">From The Archive</div>
@@ -1624,6 +1682,7 @@ footer {
     </div>
   </section>
 
+  <!-- Contact Section with WhatsApp -->
   <section id="contact">
     <div class="contact-hero">
       <div>
@@ -1654,6 +1713,7 @@ footer {
   </section>
 </main>
 
+<!-- Footer -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -1693,6 +1753,7 @@ footer {
   </div>
 </footer>
 
+<!-- Gallery Lightbox Modal -->
 <div id="galleryModal" class="gallery-modal" onclick="handleModalClick(event)">
   <div class="gallery-modal-dialog">
     <div class="gallery-modal-header">
