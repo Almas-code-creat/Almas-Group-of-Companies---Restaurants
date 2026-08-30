@@ -42,6 +42,7 @@ section{max-width:1180px;margin:auto;padding:80px 20px}
 .about h2{font-size:40px;margin:8px 0 15px}
 .about p{color:#f1ded7;max-width:900px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .panel{background:#fff;border:1px solid #eadfce;border-radius:22px;padding:30px}
 .panel h3{font-size:24px;margin-bottom:10px;color:var(--red)}
 .panel p{color:var(--muted)}
@@ -53,11 +54,58 @@ section{max-width:1180px;margin:auto;padding:80px 20px}
 .contact{background:#211715;color:#fff;border-radius:28px;padding:45px}
 .contact h2{font-size:38px;margin-bottom:12px}
 .contact p{color:#d9cbc5}
-footer{background:#140f0d;color:#ddd;text-align:center;padding:35px 20px}
-footer img{width:65px;margin-bottom:8px}
-footer small{color:#a99e98}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.values{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){nav{display:none}.cards,.grid2,.values,.gallery{grid-template-columns:1fr}.hero-inner{padding:55px 20px}.about,.contact{padding:30px}.title h2{font-size:34px}}
+
+/* Compact Gallery Banner */
+.gallery-banner-card{background:linear-gradient(135deg,#201513,#381c17);color:#fff;border-radius:26px;padding:42px 48px;display:flex;align-items:center;justify-content:space-between;gap:35px;box-shadow:0 18px 45px rgba(35,15,10,.14);border:1px solid rgba(215,166,65,.2)}
+.gallery-banner-info h2{font-size:34px;color:#fff;margin:6px 0 10px}
+.gallery-banner-info p{color:#d6c8c1;font-size:15px;max-width:520px}
+.gallery-banner-actions{display:flex;align-items:center;gap:24px;flex-shrink:0}
+.gallery-stack-preview{display:flex;align-items:center;cursor:pointer}
+.gallery-stack-preview img{width:68px;height:68px;object-fit:cover;border-radius:14px;border:3px solid #fff;margin-left:-22px;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:transform .2s}
+.gallery-stack-preview img:first-child{margin-left:0}
+.gallery-stack-preview:hover img{transform:translateY(-4px)}
+.gallery-badge-more{background:var(--gold);color:#201714;font-weight:900;font-size:13px;padding:8px 14px;border-radius:999px;margin-left:-16px;z-index:4;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.btn-open-gallery{background:var(--red);color:#fff;border:none;padding:15px 28px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .2s,transform .2s}
+.btn-open-gallery:hover{background:var(--red2);transform:scale(1.03)}
+
+/* Modal Lightbox for Gallery */
+.gallery-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,7,5,.94);z-index:99999;backdrop-filter:blur(8px);overflow-y:auto;padding:30px 20px}
+.gallery-modal.active{display:block}
+.gallery-modal-dialog{max-width:1120px;margin:30px auto;position:relative}
+.gallery-modal-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:28px}
+.gallery-modal-header h2{font-size:30px;color:var(--gold);margin:0}
+.gallery-modal-header p{color:#b3a6a1;font-size:14px;margin-top:4px}
+.gallery-modal-close{background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.gallery-modal-close:hover{background:var(--red)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:20px}
+.gallery-grid-item{background:#1f1513;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:transform .2s}
+.gallery-grid-item:hover{transform:translateY(-4px)}
+.gallery-grid-item img{width:100%;height:200px;object-fit:cover;display:block}
+.gallery-grid-caption{padding:14px 16px}
+.gallery-grid-caption h4{color:#fff;font-size:16px;margin-bottom:3px}
+.gallery-grid-caption p{color:#9e918b;font-size:13px}
+
+footer{background:#140f0d;color:#c9beba;padding:60px 20px 30px}
+.footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:45px;margin-bottom:45px}
+.footer-brand{display:flex;flex-direction:column;gap:14px}
+.footer-brand-head{display:flex;align-items:center;gap:14px}
+.footer-brand-head img{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:12px;padding:4px}
+.footer-brand-head h3{font-size:20px;font-weight:900;letter-spacing:1px;color:#fff;margin:0}
+.footer-brand p{font-size:14px;color:#9f928c;line-height:1.6;max-width:360px}
+.footer-col h4{font-size:15px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px;font-weight:800}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:#ded5d1;text-decoration:none;font-size:14px;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-contact-list{display:flex;flex-direction:column;gap:10px}
+.footer-contact-list div{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#ded5d1}
+.footer-contact-list a{color:#ded5d1;text-decoration:none;transition:color .2s}
+.footer-contact-list a:hover{color:var(--gold)}
+.footer-bottom{max-width:1180px;margin:auto;padding-top:25px;border-top:1px solid #281d1a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;font-size:13px;color:#857872}
+.footer-bottom a{color:#857872;text-decoration:none}
+.footer-bottom a:hover{color:#fff}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr 1fr}.values{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}.gallery-banner-card{flex-direction:column;text-align:center;padding:32px 24px}.gallery-banner-actions{flex-direction:column;gap:18px}}
+@media(max-width:600px){nav{display:none}.cards,.grid2,.grid3,.values,.gallery{grid-template-columns:1fr}.hero-inner{padding:55px 20px}.about,.contact{padding:30px}.title h2{font-size:34px}.footer-inner{grid-template-columns:1fr;gap:30px}.footer-bottom{flex-direction:column;text-align:center;align-items:center}}
 </style>
 </head>
 <body>
@@ -67,7 +115,8 @@ footer small{color:#a99e98}
   <nav>
     <a href="#about">About</a>
     <a href="#businesses">Our Businesses</a>
-    <a href="#prebooking">Pre-Booking</a>
+    <a href="#reservations">Reservations</a>
+    <a href="#gallery" onclick="openGalleryModal(event)">Gallery</a>
     <a href="#values">Values</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -95,37 +144,40 @@ footer small{color:#a99e98}
 </div>
 </section>
 
-
-<section id="prebooking">
+<section id="reservations">
 <div class="title">
-  <h2>Pre-Booking is Now Open</h2>
-  <p>Pre-booking is currently open at both Grand Al Mas and Al Mas Indian Restaurant, Al Malaz.</p>
+  <h2>Table Reservations &amp; Orders</h2>
+  <p>Reserve your table or order delicious takeaway at Grand Al Mas, Al Mas Restaurant, and Crispy Pollo.</p>
 </div>
-<div class="grid2">
+<div class="grid3">
   <div class="panel" style="border-top:6px solid var(--red)">
     <div class="kicker">Grand Al Mas</div>
     <h3>Grand Al Mas Multicuisine</h3>
     <p class="location">Sulaimaniyah, Riyadh</p>
-    <p><strong>Pre-booking for 26 August 2026</strong></p>
+    <p><strong>Table Reservation &amp; Dine-In</strong></p>
     <p style="margin-top:10px">📞 <a href="tel:+966536802686" style="color:var(--red);font-weight:800">053 680 2686</a></p>
-    <a class="btn" href="tel:+966536802686">Call for Pre-Booking</a>
+    <a class="btn" href="tel:+966536802686">Call for Reservation</a>
   </div>
 
   <div class="panel" style="border-top:6px solid var(--gold)">
     <div class="kicker">Al Mas Indian Restaurant</div>
     <h3>Al Mas Restaurant</h3>
     <p class="location">Al Malaz, Al Awari St., Riyadh</p>
-    <p><strong>Pre-booking / Take Away for 26 August 2026</strong></p>
+    <p><strong>Table Booking &amp; Takeaway</strong></p>
     <p style="margin-top:10px">📞 <a href="tel:+966537712037" style="color:var(--red);font-weight:800">053 771 2037</a></p>
     <p>📞 <a href="tel:+966552486054" style="color:var(--red);font-weight:800">055 248 6054</a></p>
     <p>📞 <a href="tel:+966537765212" style="color:var(--red);font-weight:800">053 776 5212</a></p>
-    <a class="btn" href="tel:+966537765212">Call for Pre-Booking</a>
+    <a class="btn" href="tel:+966537765212">Call for Reservation</a>
   </div>
-</div>
-<div class="panel" style="margin-top:24px;text-align:center">
-  <img src="assets/almas-malaz-prebooking.jpeg" alt="Al Mas Indian Restaurant pre-booking poster" style="max-width:520px;width:100%;border-radius:18px;box-shadow:0 12px 30px rgba(40,20,10,.12)">
-</div<div class="panel" style="margin-top:24px;text-align:center">
-  <img src="assets/grand-almas-prebooking.jpeg" alt="Grand Al Mas Multicuisine pre-booking poster" style="max-width:520px;width:100%;border-radius:18px;box-shadow:0 12px 30px rgba(40,20,10,.12)">
+
+  <div class="panel" style="border-top:6px solid #e05e14">
+    <div class="kicker" style="color:#e05e14">Crispy Pollo</div>
+    <h3>Crispy Pollo By Almazzz</h3>
+    <p class="location">Al Shabab, Al Aziziyah, Riyadh</p>
+    <p><strong>Dine-In, Takeaway &amp; Quick Orders</strong></p>
+    <p style="margin-top:10px">📞 <a href="tel:+966557914392" style="color:var(--red);font-weight:800">055 791 4392</a></p>
+    <a class="btn" href="tel:+966557914392" style="background:#e05e14">Call for Orders</a>
+  </div>
 </div>
 </section>
 
@@ -140,105 +192,30 @@ footer small{color:#a99e98}
   <article class="card"><div class="card-img"><img src="assets/tikka.jpg" alt="Tikka Restaurant"></div><div class="card-body"><h3>Tikka Restaurant</h3><div class="location">Jarir Street, Riyadh</div><p>Quick-service restaurant offering combo meals and Arabian wraps, with takeaway and delivery services.</p><span class="badge">Restaurant</span></div></article>
   <article class="card"><div class="card-img"><img src="assets/welcome.jpg" alt="Grand Almas"></div><div class="card-body"><h3>Grand Almas</h3><div class="location">Sulaimaniya, Riyadh</div><p>A current Al Mas Group branch added to the website portfolio.</p><span class="badge">Restaurant</span></div></article>
   <article class="card"><div class="card-img"><img src="assets/crispy-pollo-logo.png" alt="Crispy Pollo By Almazzz"></div><div class="card-body"><h3>Crispy Pollo By Almazzz</h3><div class="location">Al Shabab, Al Aziziyah, Riyadh 14512</div><p>📞 +966 55 791 4392</p></div></article>
-  <article class="card"><div class="card-img"><img src="assets/welcome.jpg" alt="Almas Mini Mart and Coffee Shop"></div><div class="card-body"><h3>Almas Mini Mart &amp; Coffee Shop</h3><div class="location">Location to be updated</div><p>Mini mart and coffee shop business. Branch location and additional details can be added when confirmed.</p><span class="badge">Mini Mart &amp; Coffee</span></div></article>
+  <article class="card"><div class="card-img"><img src="assets/almas-minimart-banner.jpg" alt="Al Mas Mini Mart &amp; Coffee Shop"></div><div class="card-body"><h3>Al Mas Mini Mart &amp; Coffee Shop</h3><div class="location">Near Malaz Police Station, Al Malaz, Riyadh</div><p>Coffee ★ Bakery ★ Grocery ★ Fresh Fruits &amp; Veg. Quick delivery available across Riyadh. 📞 055 506 4017</p><span class="badge">Mini Mart &amp; Coffee</span></div></article>
   <article class="card"><div class="card-img"><img src="assets/profile-cover.jpg" alt="Grill and Rice"></div><div class="card-body"><h3>Grill &amp; Rice</h3><div class="location">Jeddah</div><p>A current Al Mas Group business added to the website portfolio.</p><span class="badge">Restaurant</span></div></article>
 </div>
 </section>
 <section id="gallery">
-  <div class="title">
-    <h2>Our Gallery</h2>
-    <p>Explore Al Mas Group — Restaurants, Mini Mart, Coffee Shop, Food & More</p>
-  </div>
-
-  <div class="cards">
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-logo.jpg" alt="Al Mas Mini Mart & Coffee Shop">
+  <div class="gallery-banner-card">
+    <div class="gallery-banner-info">
+      <div class="kicker" style="color:var(--gold)">Photo Gallery</div>
+      <h2>Explore Our Visual Journey</h2>
+      <p>Take a tour of our restaurants, store interiors, authentic cuisine, and moments across Al Mas Group.</p>
+      <div style="margin-top:20px">
+        <button class="btn-open-gallery" onclick="openGalleryModal(event)">
+          <span>📸</span> Open Photo Gallery
+        </button>
       </div>
-      <div class="card-body">
-        <h3>Al Mas Mini Mart</h3>
-        <p>Mini Market & Coffee Shop</p>
+    </div>
+    <div class="gallery-banner-actions">
+      <div class="gallery-stack-preview" onclick="openGalleryModal(event)" title="Click to open gallery">
+        <img src="assets/minimart-1.jpeg" alt="Mini Mart">
+        <img src="assets/almas-malaz.jpg" alt="Al Mas Malaz">
+        <img src="assets/minimart-2.png" alt="Store Interior">
+        <div class="gallery-badge-more">+8 Photos</div>
       </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-1.jpeg" alt="Al Mas Mini Mart">
-      </div>
-      <div class="card-body">
-        <h3>Mini Mart</h3>
-        <p>Our Store</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-2.png" alt="Al Mas Mini Mart Interior">
-      </div>
-      <div class="card-body">
-        <h3>Store Interior</h3>
-        <p>Products & Grocery</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-3.png" alt="Al Mas Mini Mart Interior">
-      </div>
-      <div class="card-body">
-        <h3>Inside Our Store</h3>
-        <p>Wide Range of Products</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-4.png" alt="Al Mas Mini Mart">
-      </div>
-      <div class="card-body">
-        <h3>Mini Mart</h3>
-        <p>Shopping Experience</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-5.png" alt="Al Mas Mini Mart">
-      </div>
-      <div class="card-body">
-        <h3>Our Customers</h3>
-        <p>Serving Our Community</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-6.png" alt="Al Mas Mini Mart">
-      </div>
-      <div class="card-body">
-        <h3>Mini Mart & Coffee Shop</h3>
-        <p>Fresh • Quality • Convenience</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-img">
-        <img src="assets/minimart-7.png" alt="Al Mas Mini Mart">
-      </div>
-      <div class="card-body">
-        <h3>Visit Us</h3>
-        <p>Near Malaz Police Station</p>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="panel" style="margin-top:24px;text-align:center">
-    <h3>Al Mas Mini Mart & Coffee Shop</h3>
-    <p><strong>Delivery Available</strong></p>
-    <p>📞 <strong>055 506 4017</strong></p>
-    <p>Near Malaz Police Station, Salah Ad Din Al Ayyubi Rd, Al Malaz, Riyadh 12831</p>
+    </div>
   </div>
 </section>
 
@@ -292,9 +269,126 @@ footer small{color:#a99e98}
 </main>
 
 <footer>
-<img src="assets/logo.png" alt="Al Mas Group logo">
-<p>Al Mas Group of Companies</p>
-<small>© 2026 Al Mas Group. All rights reserved.</small>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-head">
+        <img src="assets/almas_indian_restaurant_logo_clean.png" alt="Al Mas Group Logo">
+        <h3>AL MAS GROUP</h3>
+      </div>
+      <p>Taste of Good Food since 1997. Delivering exceptional dining experiences, catering services, and food businesses across Saudi Arabia.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#businesses">Our Businesses</a></li>
+        <li><a href="#reservations">Reservations</a></li>
+        <li><a href="#gallery">Our Gallery</a></li>
+        <li><a href="#values">Core Values</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Head Office & Contact</h4>
+      <div class="footer-contact-list">
+        <div><span>📍</span> <span>Al Malaz, Riyadh, Saudi Arabia</span></div>
+        <div><span>📞</span> <a href="tel:+966537765212">+966 53 776 5212</a></div>
+        <div><span>✉️</span> <a href="mailto:almasgroupalmalaz@gmail.com">almasgroupalmalaz@gmail.com</a></div>
+        <div><span>🌐</span> <a href="https://almasgroupksa.com" target="_blank" rel="noopener">almasgroupksa.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Al Mas Group of Companies. All rights reserved.</div>
+    <div>Taste of Good Food • Established 1997</div>
+  </div>
 </footer>
+
+<!-- Gallery Lightbox Modal -->
+<div id="galleryModal" class="gallery-modal" onclick="handleModalClick(event)">
+  <div class="gallery-modal-dialog">
+    <div class="gallery-modal-header">
+      <div>
+        <h2>Al Mas Photo Gallery</h2>
+        <p>Restaurants, Mini Mart &amp; Coffee Shop, Cuisine &amp; More</p>
+      </div>
+      <button class="gallery-modal-close" onclick="closeGalleryModal()" title="Close">&times;</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-grid-item">
+        <img src="assets/almas-malaz.jpg" alt="Al Mas Restaurant Malaz" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Al Mas Restaurant</h4><p>Al Malaz, Riyadh</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/almas-indian.jpg" alt="Al Mas Indian Restaurant" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Al Mas Indian Restaurant</h4><p>Dining &amp; Family Cabins</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/indo-arab.jpg" alt="Indo-Arab Fusion Restaurant" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Indo-Arab Fusion</h4><p>Batha, Riyadh</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/tikka.jpg" alt="Tikka Restaurant" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Tikka Restaurant</h4><p>Jarir Street, Riyadh</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-logo.jpg" alt="Al Mas Mini Mart &amp; Coffee Shop" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Al Mas Mini Mart</h4><p>Mini Market &amp; Coffee Shop</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-1.jpeg" alt="Mini Mart Store Front" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Mini Mart</h4><p>Our Store Front</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-2.png" alt="Store Interior" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Store Interior</h4><p>Products &amp; Grocery</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-3.png" alt="Inside Our Store" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Inside Our Store</h4><p>Wide Range of Products</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-4.png" alt="Shopping Experience" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Shopping Experience</h4><p>Convenience &amp; Freshness</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-5.png" alt="Our Customers" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Our Customers</h4><p>Serving Our Community</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-6.png" alt="Mini Mart &amp; Coffee Shop" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Mini Mart &amp; Coffee</h4><p>Fresh • Quality • Convenience</p></div>
+      </div>
+      <div class="gallery-grid-item">
+        <img src="assets/minimart-7.png" alt="Visit Us" loading="lazy">
+        <div class="gallery-grid-caption"><h4>Visit Us</h4><p>Near Malaz Police Station, Riyadh</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openGalleryModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById('galleryModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGalleryModal() {
+    document.getElementById('galleryModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  function handleModalClick(e) {
+    if (e.target.id === 'galleryModal') {
+      closeGalleryModal();
+    }
+  }
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeGalleryModal();
+  });
+</script>
 </body>
 </html>
