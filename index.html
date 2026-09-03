@@ -144,7 +144,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 nav a {
@@ -177,22 +177,48 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Matching Dual CTA Buttons in Header */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 8px;
+}
+
 .nav-cta {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff !important;
-  padding: 10px 20px !important;
+  padding: 9px 18px !important;
   border-radius: var(--radius-full);
   font-weight: 700 !important;
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   box-shadow: 0 4px 14px rgba(104, 14, 20, 0.25);
   border: 1px solid rgba(212, 167, 59, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-cta::after { display: none !important; }
+
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(104, 14, 20, 0.35);
   color: #fff !important;
+}
+
+.nav-cta-restaurant {
+  background: linear-gradient(135deg, #b88628 0%, var(--gold) 100%);
+  color: #1a0f0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(184, 134, 40, 0.3);
+}
+
+.nav-cta-restaurant:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(184, 134, 40, 0.45);
+  color: #000 !important;
 }
 
 .mobile-menu-btn {
@@ -1680,6 +1706,8 @@ footer {
     border-bottom: 1px solid var(--border);
     gap: 16px;
   }
+  .nav-cta-group { flex-direction: column; width: 100%; gap: 10px; margin-left: 0; }
+  .nav-cta { width: 100%; justify-content: center; }
   .mobile-menu-btn { display: block; }
   .hero-slider { height: 280px; }
   .hero-floating-card { position: relative; bottom: auto; left: auto; margin-top: 14px; }
@@ -1717,13 +1745,18 @@ footer {
 
     <nav id="mainNav">
       <a href="#about">About</a>
-      <a href="#catering" style="color:var(--primary);font-weight:700">🎪 Catering</a>
+      <a href="#catering">Catering</a>
       <a href="#reservations">Reservations</a>
       <a href="#businesses">Our Businesses</a>
       <a href="#gallery" onclick="openGalleryModal(event)">Gallery</a>
       <a href="#values">Values</a>
       <a href="#contact">Contact</a>
-      <a href="#catering" class="nav-cta">Book Catering</a>
+      
+      <!-- Matching Dual Action Buttons in Header -->
+      <div class="nav-cta-group">
+        <a href="#reservations" class="nav-cta nav-cta-restaurant">🍽️ Book Restaurant</a>
+        <a href="#catering" class="nav-cta">🎪 Book Catering</a>
+      </div>
     </nav>
   </div>
 </header>
