@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Mas Group | Taste of Good Food — Saudi Arabia</title>
-<meta name="description" content="Al Mas Group of Companies — Premium restaurants, catering, bakery, coffee and food businesses in Saudi Arabia since 1997.">
+<meta name="description" content="Al Mas Group of Companies — Premium restaurants, outdoor & event catering, banquets, bakery, coffee and food businesses in Saudi Arabia since 1997.">
 
 <!-- Premium Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,14 +144,14 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 nav a {
   text-decoration: none;
   color: var(--ink-soft);
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 14px;
   transition: var(--transition);
   position: relative;
   padding: 6px 0;
@@ -180,7 +180,7 @@ nav a:hover::after {
 .nav-cta {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff !important;
-  padding: 10px 22px !important;
+  padding: 10px 20px !important;
   border-radius: var(--radius-full);
   font-weight: 700 !important;
   font-size: 13.5px !important;
@@ -429,7 +429,6 @@ h1 {
   gap: 6px;
 }
 
-/* Slider Controls */
 .slider-nav-btn {
   position: absolute;
   top: 50%;
@@ -462,7 +461,6 @@ h1 {
 .slider-prev { left: 16px; }
 .slider-next { right: 16px; }
 
-/* Slider Dots */
 .slider-indicators {
   position: absolute;
   top: 18px;
@@ -665,6 +663,272 @@ section {
   font-size: 15.5px;
   color: #fff;
   letter-spacing: 0.5px;
+}
+
+/* ================= SPECIAL OUTDOOR CATERING SECTION ================= */
+.catering-highlight-wrapper {
+  background: linear-gradient(135deg, #1f0b09 0%, #3e0c10 50%, #170706 100%);
+  border-radius: var(--radius-lg);
+  padding: 65px 55px;
+  color: #fff;
+  box-shadow: var(--shadow-lg), 0 20px 60px rgba(104, 14, 20, 0.25);
+  border: 2px solid rgba(212, 167, 59, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.catering-highlight-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 167, 59, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.catering-head {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 45px;
+  position: relative;
+  z-index: 2;
+}
+
+.catering-head .cursive-tag {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.catering-head h2 {
+  font-size: clamp(38px, 5.2vw, 56px);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.catering-head p {
+  color: #ecd9d2;
+  font-size: 17.5px;
+  line-height: 1.7;
+}
+
+/* 5 Events Cards Grid */
+.catering-services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.catering-service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 167, 59, 0.3);
+  border-radius: var(--radius-md);
+  padding: 24px 18px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.catering-service-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.catering-service-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.catering-service-card h4 {
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.catering-service-card p {
+  font-size: 13px;
+  color: #e5d2cb;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Value Highlights Strip */
+.catering-features-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding: 22px 26px;
+  background: rgba(10, 4, 3, 0.55);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 167, 59, 0.25);
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.catering-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catering-feature-item span {
+  font-size: 26px;
+  color: var(--gold);
+}
+
+.catering-feature-item div strong {
+  font-size: 14px;
+  color: #fff;
+  display: block;
+  line-height: 1.3;
+}
+
+.catering-feature-item div small {
+  font-size: 12px;
+  color: #c9beba;
+}
+
+/* Grand Action & Booking Bar */
+.catering-action-box {
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 30px 36px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+  border: 2px solid rgba(212, 167, 59, 0.5);
+}
+
+.catering-action-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catering-action-info h3 {
+  font-size: 24px;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.catering-action-info p {
+  font-size: 14.5px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.catering-phones-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.catering-phone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fdf6ec;
+  border: 1.5px solid rgba(212, 167, 59, 0.6);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.catering-phone-badge:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(104, 14, 20, 0.25);
+}
+
+.catering-location-tag {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.catering-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-catering-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 15.5px;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  transition: var(--transition);
+}
+
+.btn-catering-wa:hover {
+  background: #1eb855;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.btn-catering-call-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 8px 20px rgba(104, 14, 20, 0.25);
+  transition: var(--transition);
+}
+
+.btn-catering-call-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(104, 14, 20, 0.35);
 }
 
 /* ================= 5 BRANCH BOOKINGS ================= */
@@ -1380,6 +1644,12 @@ footer {
 }
 
 /* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .catering-services-grid { grid-template-columns: repeat(3, 1fr); }
+  .catering-features-strip { grid-template-columns: repeat(2, 1fr); }
+  .catering-action-box { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; gap: 45px; text-align: center; }
   .hero p { margin: auto; }
@@ -1413,6 +1683,11 @@ footer {
   .mobile-menu-btn { display: block; }
   .hero-slider { height: 280px; }
   .hero-floating-card { position: relative; bottom: auto; left: auto; margin-top: 14px; }
+  .catering-highlight-wrapper { padding: 35px 20px; }
+  .catering-services-grid { grid-template-columns: 1fr; }
+  .catering-features-strip { grid-template-columns: 1fr; gap: 14px; }
+  .catering-phones-row { flex-direction: column; align-items: stretch; }
+  .catering-phone-badge { justify-content: center; }
   .cards, .grid2, .booking-grid, .values, .profile-showcase { grid-template-columns: 1fr; }
   .about-features { grid-template-columns: 1fr; }
   .gallery-banner-card { flex-direction: column; text-align: center; padding: 35px 24px; }
@@ -1442,12 +1717,13 @@ footer {
 
     <nav id="mainNav">
       <a href="#about">About</a>
+      <a href="#catering" style="color:var(--primary);font-weight:700">🎪 Catering</a>
       <a href="#reservations">Reservations</a>
       <a href="#businesses">Our Businesses</a>
       <a href="#gallery" onclick="openGalleryModal(event)">Gallery</a>
       <a href="#values">Values</a>
       <a href="#contact">Contact</a>
-      <a href="#reservations" class="nav-cta">Book a Table</a>
+      <a href="#catering" class="nav-cta">Book Catering</a>
     </nav>
   </div>
 </header>
@@ -1461,11 +1737,11 @@ footer {
           <span>★</span> Established 1997 • Saudi Arabia
         </div>
         <h1>Taste of <br><span class="gold-gradient">Good Food.</span></h1>
-        <p>Premier restaurant chains, multi-cuisine dining, outdoor catering, and grocery businesses serving discerning guests across Saudi Arabia for over 27 years.</p>
+        <p>Premier restaurant chains, multi-cuisine dining, outdoor catering &amp; event services, and grocery businesses serving discerning guests across Saudi Arabia for over 27 years.</p>
         
         <div class="hero-actions">
-          <a class="btn-primary" href="#businesses">
-            Explore Our Businesses <span>↓</span>
+          <a class="btn-primary" href="#catering">
+            🎪 Event Catering &amp; Banquets <span>↓</span>
           </a>
           <a class="btn-secondary" href="#reservations">
             Table Reservations <span>➔</span>
@@ -1577,6 +1853,7 @@ footer {
     </div>
   </div>
 
+  <!-- About Section -->
   <section id="about">
     <div class="about-card">
       <div class="kicker">About Al Mas Group</div>
@@ -1595,6 +1872,127 @@ footer {
         <div class="about-feature-item">
           <span>🍽️</span>
           <strong>Banquets &amp; Outdoor Catering</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEDICATED SPECIAL OUTDOOR CATERING HIGHLIGHT SECTION ================= -->
+  <section id="catering" style="padding-top: 20px;">
+    <div class="catering-highlight-wrapper">
+      <div class="catering-head">
+        <span class="cursive-tag">We Cater Your</span>
+        <h2>OUTDOOR EVENTS</h2>
+        <p>Delicious Food • Professional Service • Memorable Moments<br>Making your celebrations truly unforgettable across Riyadh and surrounding areas.</p>
+      </div>
+
+      <!-- 5 Event Types Grid (Matches Poster) -->
+      <div class="catering-services-grid">
+        <!-- 1. Weddings -->
+        <div class="catering-service-card">
+          <div>
+            <div class="catering-service-icon">💍</div>
+            <h4>Weddings</h4>
+            <p>Make your special day truly unforgettable with royal feasts &amp; elegant setups.</p>
+          </div>
+        </div>
+
+        <!-- 2. Birthdays & Parties -->
+        <div class="catering-service-card">
+          <div>
+            <div class="catering-service-icon">🎈</div>
+            <h4>Birthdays &amp; Parties</h4>
+            <p>Fun, delicious food and joyful memories that last forever.</p>
+          </div>
+        </div>
+
+        <!-- 3. Corporate Events -->
+        <div class="catering-service-card">
+          <div>
+            <div class="catering-service-icon">💼</div>
+            <h4>Corporate Events</h4>
+            <p>Professional executive catering for business meetings, conferences &amp; summits.</p>
+          </div>
+        </div>
+
+        <!-- 4. Family Gatherings -->
+        <div class="catering-service-card">
+          <div>
+            <div class="catering-service-icon">👨‍👩‍👧‍👦</div>
+            <h4>Family Gatherings</h4>
+            <p>Good authentic food that brings families closer together.</p>
+          </div>
+        </div>
+
+        <!-- 5. Private Events -->
+        <div class="catering-service-card">
+          <div>
+            <div class="catering-service-icon">🍽️</div>
+            <h4>Private Events</h4>
+            <p>Tailored custom menus prepared for your exclusive occasions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value Pillars (Matches Poster) -->
+      <div class="catering-features-strip">
+        <div class="catering-feature-item">
+          <span>👨‍🍳</span>
+          <div>
+            <strong>HYGIENIC &amp; QUALITY FOOD</strong>
+            <small>Prepared with care and highest standards.</small>
+          </div>
+        </div>
+        <div class="catering-feature-item">
+          <span>👥</span>
+          <div>
+            <strong>EXPERIENCED &amp; TRAINED TEAM</strong>
+            <small>Skilled team to serve you the best.</small>
+          </div>
+        </div>
+        <div class="catering-feature-item">
+          <span>⏰</span>
+          <div>
+            <strong>ON-TIME, EVERY TIME</strong>
+            <small>We value your time and trust.</small>
+          </div>
+        </div>
+        <div class="catering-feature-item">
+          <span>📋</span>
+          <div>
+            <strong>CUSTOMIZED MENUS</strong>
+            <small>Menus designed to suit your taste &amp; budget.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grand Action & Booking Bar with Exact Phone Numbers from Poster -->
+      <div class="catering-action-box">
+        <div class="catering-action-info">
+          <h3>Plan Your Perfect Event Today</h3>
+          <p>Book your event date or talk directly to our catering managers:</p>
+          
+          <div class="catering-phones-row">
+            <a class="catering-phone-badge" href="tel:+966537712037">
+              <span>📞</span> +966 53 771 2037
+            </a>
+            <a class="catering-phone-badge" href="tel:+966537765212">
+              <span>📞</span> +966 53 776 5212
+            </a>
+          </div>
+
+          <div class="catering-location-tag">
+            <span>📍</span> <strong>Serving:</strong> Riyadh, Saudi Arabia and Surrounding Areas
+          </div>
+        </div>
+
+        <div class="catering-action-buttons">
+          <a class="btn-catering-wa" href="https://wa.me/966537712037?text=Hello%20Al%20Mas%20Restaurant,%20I%20would%20like%20to%20inquire%20about%20Outdoor%20Event%20Catering" target="_blank" rel="noopener">
+            <span>💬</span> WhatsApp Booking (+966 53 771 2037)
+          </a>
+          <a class="btn-catering-call-main" href="tel:+966537765212">
+            <span>📞</span> Call: +966 53 776 5212
+          </a>
         </div>
       </div>
     </div>
@@ -1935,6 +2333,10 @@ footer {
       <div class="contact-direct-box">
         <div class="contact-direct-item">
           <span>📞</span>
+          <a href="tel:+966537712037">+966 53 771 2037</a>
+        </div>
+        <div class="contact-direct-item">
+          <span>📞</span>
           <a href="tel:+966537765212">+966 53 776 5212</a>
         </div>
         <div class="contact-direct-item">
@@ -1945,7 +2347,7 @@ footer {
           <span>🌐</span>
           <a href="https://almasgroupksa.com" target="_blank" rel="noopener">almasgroupksa.com</a>
         </div>
-        <a class="btn-whatsapp" href="https://wa.me/966537765212" target="_blank" rel="noopener">
+        <a class="btn-whatsapp" href="https://wa.me/966537712037" target="_blank" rel="noopener">
           <span>💬</span> Chat on WhatsApp
         </a>
       </div>
@@ -1961,13 +2363,14 @@ footer {
         <img src="assets/almas_indian_restaurant_logo_clean.png" alt="Al Mas Group Logo">
         <h3>AL MAS GROUP</h3>
       </div>
-      <p>Taste of Good Food since 1997. Delivering exceptional culinary experiences, outdoor catering, and retail grocery stores throughout Saudi Arabia.</p>
+      <p>Taste of Good Food since 1997. Delivering exceptional culinary experiences, outdoor catering &amp; banquets, and retail grocery stores throughout Saudi Arabia.</p>
     </div>
 
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#catering">Outdoor Catering</a></li>
         <li><a href="#reservations">Table Reservations</a></li>
         <li><a href="#businesses">Our Businesses</a></li>
         <li><a href="#gallery" onclick="openGalleryModal(event)">Visual Gallery</a></li>
@@ -1980,6 +2383,7 @@ footer {
       <h4>Head Office &amp; Inquiries</h4>
       <div class="footer-contact-list">
         <div><span>📍</span> <span>Al Malaz, Riyadh, Kingdom of Saudi Arabia</span></div>
+        <div><span>📞</span> <a href="tel:+966537712037">+966 53 771 2037</a></div>
         <div><span>📞</span> <a href="tel:+966537765212">+966 53 776 5212</a></div>
         <div><span>✉️</span> <a href="mailto:almasgroupalmalaz@gmail.com">almasgroupalmalaz@gmail.com</a></div>
         <div><span>🌐</span> <a href="https://almasgroupksa.com" target="_blank" rel="noopener">almasgroupksa.com</a></div>
